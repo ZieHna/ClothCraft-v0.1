@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClothCraft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/categorystyle(1).css">
+</head>
+<body>
+
+    <!-- SIDE NAV OVERLAY -->
+    <div class="sidenav-overlay" id="sidenavOverlay" onclick="closeSidenav()"></div>
+    <nav class="sidenav" id="sidenav">
+        <button class="sidenav-close" onclick="closeSidenav()">&#x2715;</button>
+        <ul>
+            <li><a href="#men-slide">Men</a></li>
+            <li><a href="#women-slide">Women</a></li>
+            <li><a href="#kids&babies">Kids</a></li>
+            <li><a href="#kids&babies">Babies</a></li>
+        </ul>
+        <div class="sidenav-footer">
+            <span>© 2025 ClothCraft</span>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <a href="../index.html"><h1 class="logo">ClothCraft</h1></a>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#men-slide">Men</a></li>
+                <li><a href="#women-slide">Women</a></li>
+                <li><a href="#kids&babies">Kids</a></li>
+                <li><a href="#kids&babies">Babies</a></li>
+            </ul>
+        </nav>
+
+        <button class="menu-btn" id="menubutton" onclick="showSidenav()" aria-label="Open menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-text">
+            <p class="hero-eyebrow">New Collection</p>
+            <h2 class="hero-heading">Wear Your<br><em>Craft</em></h2>
+        </div>
+        <div class="hero-cta">
+            <a href="#Featured-looks" class="btn-outline">Use our Designs as inspiration for yours</a>
+        </div>
+        <div class="scroll-hint" >
+            <span>Scroll</span>
+            <div class="scroll-line" id="Featured-looks"></div>
+        </div>
+    </section>
+
+    <!-- MAIN SHOWCASE CAROUSEL -->
+    <section class="showcase-section" >
+        <div class="section-label">
+            <span class="label-number">01</span>
+            <span class="label-text" >Featured Looks</span>
+        </div>
+
+        <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="carousel">
+                <!-- Image slots — mockups go here -->
+                <div class="carousel-card"><div class="card-placeholder"><img src="../assets/samples/Babies/Hoodie_/hoodie.png" alt="NOTHING YET"></div></div>
+                <div class="carousel-card"><div class="card-placeholder"><img src="../assets/samples/Babies/Hoodie_/hoodie2.png" alt=""></div></div>
+                <div class="carousel-card"><div class="card-placeholder"><img src="../assets/samples/Designs/1.png" alt="NOTHING YET"></div></div>
+                <div class="carousel-card"><div class="card-placeholder"><img src="../assets/samples/Designs/11.png" alt="NOTHING YET"></div></div>
+                <div class="carousel-card"><div class="card-placeholder"><img src="../assets/samples/Designs/17.png" alt="NOTHING YET"></div></div>
+                <div class="carousel-card"><div class="card-placeholder"><img src="../assets/samples/Designs/20.png" alt="NOTHING YET"></div></div>
+                <div class="carousel-card"><div class="card-placeholder"><img src="../assets/samples/Designs/5.png" alt="NOTHING YET"></div></div>
+                <div class="carousel-card"><div class="card-placeholder"><img src="../assets/samples/Designs/15.png" alt="NOTHING YET"></div></div>
+            </div>
+        </div>
+
+        <div class="carousel-controls">
+            <div class="carousel-arrows">
+                <button class="arrow-btn" id="prevBtn" aria-label="Previous">&#10094;</button>
+                <button class="arrow-btn" id="nextBtn" aria-label="Next">&#10095;</button>
+            </div>
+            <div class="carousel-counter">
+                <span id="carouselCurrent">01</span>
+                <span class="counter-sep">/</span>
+                <span id="carouselTotal">08</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <div class="cta-strip">
+        <p id="men-slide" class="cta-strip-text">Design something one of a kind. </p>
+        <a href="../Html/catalog.html" class="btn-solid">Create My Own</a>
+    </div>
+
+    <!-- STYLES / TEMPLATES CAROUSEL -->
+    <section class="styles-section" >
+        <div class="section-label light">
+            <span class="label-number" >02</span>
+            <span class="label-text">Styles for Men</span>
+        </div>
+
+        <div class="grid-track-wrapper">
+            <div class="grid-track" id="gridCarousel">
+                <!-- Style template slots -->
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Designs/1.png" alt="Nothing Yet"></div>
+                    <p class="style-name">T-Shirt</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Designs/3.png" alt="Nothing Yet"></div>
+                    <p class="style-name">T-shirt with design</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Designs/7.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Long Sleeves</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Designs/6.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Hoodie</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Designs/10.png" alt="Nothing Yet"></div>
+                    <p class="style-name">T-Shirt</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Designs/8.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Tank Top</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-controls light">
+            <div class="carousel-arrows">
+                <button class="arrow-btn dark" id="gridPrev" aria-label="Previous">&#10094;</button>
+                <button class="arrow-btn dark" id="gridNext" aria-label="Next">&#10095;</button>
+            </div>
+            <div class="carousel-counter dark">
+                <span id="gridCurrent">01</span>
+                <span class="counter-sep">/</span>
+                <span id="gridTotal">06</span>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- STYLES / TEMPLATES CAROUSEL part 2 -->
+    <section class="styles-section" id="women-slide">
+        <div class="section-label light">
+            <span class="label-number" >03</span>
+            <span class="label-text">Style for Women</span><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+            <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+            <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+            <hr><hr><hr><hr><hr><hr><hr><hr><hr>
+            <a href="../Html/catalog.html" class="btn-solid">Create My Own</a>
+        </div>
+
+        <div class="grid-track-wrapper">
+            <div class="grid-track" id="gridCarousel">
+                <!-- Style template slots -->
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Designs/5.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Cropped Top</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Designs/12.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Cropped Top</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Designs/13.png" alt="Nothing Yet"></div>
+                    <p class="style-name">T-Shirt Women</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/womendesign/Woman Designs/21.png" alt="Nothing Yet"></div>
+                    <p class="style-name">T-Shirt Women</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/womendesign/Woman Designs/24.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Polo Shirt Women</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/womendesign/Woman Designs/30.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Long Sleeve Women</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-controls light">
+            <div class="carousel-arrows">
+                <button class="arrow-btn dark" id="gridPrev" aria-label="Previous">&#10094;</button>
+                <button class="arrow-btn dark" id="gridNext" aria-label="Next">&#10095;</button>
+            </div>
+            <div class="carousel-counter dark">
+                <span id="gridCurrent">01</span>
+                <span class="counter-sep">/</span>
+                <span id="gridTotal">06</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- STYLES / TEMPLATES CAROUSEL part 3 -->
+    <section class="styles-section" id="kids&babies">
+        <div class="section-label light">
+            <span class="label-number" >04</span>
+            <span class="label-text">Style for Kids And Babies</span><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+            <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+            <hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr><hr>
+            <hr><hr><hr><hr><hr><hr><hr><hr><hr>
+            <a href="../Html/catalog.html" class="btn-solid">Create My Own</a>
+        </div>
+
+        <div class="grid-track-wrapper">
+            <div class="grid-track" id="gridCarousel">
+                <!-- Style template slots -->
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Babies/Dresses/Baby girl dress with design 1.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Baby Dress</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Babies/Onesie long sleeve_/Long sleeve onesies 3.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Onesie Long Sleeves</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Babies/Hoodie_/hoodie3.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Baby Hoodie</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Babies/Hoodie_/hoodie2.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Hoodie for Kids</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Babies/Dresses/Baby girl dress with design 3.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Dress for Kids</p>
+                </div>
+                <div class="style-card">
+                    <div class="style-placeholder"><img src="../assets/samples/Babies/Onesie_/Onesies design 2.png" alt="Nothing Yet"></div>
+                    <p class="style-name">Onesie</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-controls light">
+            <div class="carousel-arrows">
+                <button class="arrow-btn dark" id="gridPrev" aria-label="Previous">&#10094;</button>
+                <button class="arrow-btn dark" id="gridNext" aria-label="Next">&#10095;</button>
+            </div>
+            <div class="carousel-counter dark">
+                <span id="gridCurrent">01</span>
+                <span class="counter-sep">/</span>
+                <span id="gridTotal">06</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER STRIP -->
+    <footer>
+        <p class="footer-logo">ClothCraft</p>
+        <p class="footer-copy">© 2025 ClothCraft. All rights reserved.</p>
+    </footer>
+
+    <script src="../Script/category-script.js"></script>
+</body>
+</html>

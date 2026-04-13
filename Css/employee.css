@@ -1,0 +1,488 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    }
+
+body {
+    background: #0f0f10;
+    color: white;
+    display: flex;
+    min-height: 100vh;
+    }
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 220px;
+    background: #111;
+    border-right: 1px solid #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    }
+
+.sidebar-logo {
+    padding: 24px 20px;
+    font-size: 22px;
+    font-weight: 900;
+    border-bottom: 1px solid #2a2a2a;
+    letter-spacing: 1px;
+}
+
+.sidebar-logo span {
+    font-size: 11px;
+    font-weight: normal;
+    color: #888;
+    display: block;
+   margin-top: 3px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.sidebar nav {
+    flex: 1;
+    padding: 16px 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    cursor: pointer;
+    color: #888;
+    font-size: 14px;
+    font-weight: 600;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.nav-item:hover {
+    color: white;
+    background: #1a1a1a;
+}
+
+.nav-item.active {
+    color: white;
+    background: #1a1a1a;
+    border-left-color: white;
+}
+
+.nav-icon {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-bottom {
+    padding: 16px 20px;
+    border-top: 1px solid #2a2a2a;
+}
+
+.back-btn {
+    width: 100%;
+    background: #2b2b2e;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.back-btn:hover {
+    background: #3a3a3a;
+}
+
+/* ===== MAIN AREA ===== */
+.main {
+    margin-left: 220px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== TOP BAR ===== */
+.topbar {
+    background: #111;
+    border-bottom: 1px solid #2a2a2a;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.topbar h2 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.emp-tag {
+    background: #14532d;
+    color: #34d399;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: 1px;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    display: none;
+    padding: 28px;
+    flex: 1;
+}
+
+.section.active {
+    display: block;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.section-sub {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+/* ===== STATS ROW ===== */
+.stats-row {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    padding: 18px 22px;
+    flex: 1;
+    min-width: 130px;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 900;
+        }
+
+/* ===== TABLE ===== */
+.table-wrap {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    background: #222;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #888;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #222;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover td {
+    background: #222;
+}
+
+/* ===== BUTTONS ===== */
+.btn-white {
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.btn-white:hover {
+    background: #ddd;
+}
+
+.btn-dark {
+    background: #2b2b2e;
+    color: white;
+    border: 1px solid #444;
+    padding: 7px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-dark:hover {
+    background: #3a3a3a;
+}
+
+.btn-green {
+    background: #14532d;
+    color: #34d399;
+    border: 1px solid #1a6b38;
+    padding: 7px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-green:hover {
+    background: #1a6b38;
+}
+
+/* ===== TOOLBAR ===== */
+.toolbar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 200px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 10px 16px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #555;
+}
+
+/* ===== FILTER BUTTONS ===== */
+.filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.filter-btn {
+    background: #2b2b2e;
+    color: #888;
+    border: 1px solid #333;
+    padding: 7px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    color: white;
+    border-color: white;
+}
+
+.filter-btn.active {
+    background: white;
+    color: black;
+    border-color: white;
+}
+
+/* ===== MODAL ===== */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 20px;
+}
+
+.modal {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 480px;
+    position: relative;
+}
+
+.modal h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.modal .sub {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    background: #2b2b2e;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 11px 14px;
+    color: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group textarea {
+    height: 80px;
+    resize: none;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.modal-actions .btn-white {
+    flex: 1;
+    padding: 13px;
+    border-radius: 999px;
+    font-size: 15px;
+}
+
+.modal-actions .btn-dark {
+    flex: 1;
+    padding: 13px;
+    border-radius: 999px;
+    font-size: 15px;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.closeBtn:hover {
+    color: white;
+}
+
+/* ===== BADGES ===== */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.badge-green { background: #14532d; color: #34d399; }
+.badge-yellow { background: #78350f; color: #fbbf24; }
+.badge-blue { background: #1e3a5f; color: #60a5fa; }
+.badge-gray { background: #222; color: #888; }
+.badge-red { background: #3b1010; color: #e74c3c; }
+
+/* ===== NO DATA ===== */
+.no-data {
+    text-align: center;
+    padding: 40px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* ===== DELIVERY CARDS ===== */
+.delivery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 14px;
+}
+
+.delivery-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.delivery-card .d-id {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.delivery-card .d-name {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.delivery-card .d-address {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.delivery-card .d-actions {
+    display: flex;
+    gap: 8px;
+}

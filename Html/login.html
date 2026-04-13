@@ -1,0 +1,74 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>login</title>
+  <link rel="stylesheet" href="../Css/login.css">
+</head>
+<body>
+  <!-- AUTH BUTTONS -->
+<div class="auth-buttons">
+  <button class="register-btn" onclick="openAuth('register')">Register</button>
+  <button class="login-btn" onclick="openAuth('login')">Login</button>
+</div>
+
+<!-- MODAL OVERLAY -->
+<div class="modalOverlay" id="modalOverlay">
+
+  <!-- MODAL -->
+  <div class="accountlogin">
+
+    <!-- CLOSE BUTTON -->
+    <button class="closeBtn" id="closeModal">&times;</button>
+
+    <!-- TITLE -->
+    <div class="text">
+      <h1>WELCOME</h1>
+      <p>Sign in or create your ClothCraft account</p>
+    </div>
+
+    <!-- SWITCH BUTTON -->
+    <div class="switchTab">
+      <button class="tabBtn active" id="loginTab">Login</button>
+      <button class="tabBtn" id="registerTab">Register</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" class="formBox">
+      <label>EMAIL</label>
+      <input type="email" placeholder="you@example.com" />
+
+      <label>PASSWORD</label>
+      <input type="password" id="loginPassword" placeholder="••••••••" />
+
+      <div class="showPassword">
+        <input type="checkbox" id="showLoginPass">
+        <label for="showLoginPass">Show Password</label>
+      </div>
+
+      <button type="submit" class="submitBtn">Login</button>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form id="registerForm" class="formBox hidden">
+      <label>USERNAME</label>
+      <input type="text" placeholder="Your username" />
+
+      <label>EMAIL</label>
+      <input type="email" placeholder="you@example.com" />
+
+      <label>PASSWORD</label>
+      <input type="password" id="registerPassword" placeholder="••••••••" />
+
+      <label>CONFIRM PASSWORD</label>
+      <input type="password" id="confirmPassword" placeholder="••••••••" />
+
+      <button type="submit" class="submitBtn">Register</button>
+    </form>
+
+  </div>
+</div>
+<script src="../Script/login.js"></script>
+</body>
+</html>

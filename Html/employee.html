@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClothCraft - Employee Panel</title>
+    <link rel="stylesheet" href="../Css/employee.css">
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            ClothCraft
+            <span>Employee Panel</span>
+        </div>
+
+        <nav>
+            <div class="nav-item active" onclick="showSection('orders')">
+                <span class="nav-icon">🧾</span> View Orders
+            </div>
+            <div class="nav-item" onclick="showSection('update')">
+                <span class="nav-icon">🔄</span> Update Status
+            </div>
+            <div class="nav-item" onclick="showSection('search')">
+                <span class="nav-icon">🔍</span> Search Orders
+            </div>
+            <div class="nav-item" onclick="showSection('stock')">
+                <span class="nav-icon">📦</span> Product Stock
+            </div>
+            <div class="nav-item" onclick="showSection('stockupdate')">
+                <span class="nav-icon">✏️</span> Update Stock
+            </div>
+            <div class="nav-item" onclick="showSection('deliveries')">
+                <span class="nav-icon">🚚</span> Deliveries
+            </div>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button class="back-btn" onclick="window.location.href='../index.html'">← Back to Site</button>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- TOP BAR -->
+        <div class="topbar">
+            <h2 id="topbarTitle">View Orders</h2>
+            <span class="emp-tag"> EMPLOYEE</span>
+        </div>
+
+        <!-- ==================== VIEW ORDERS ==================== -->
+        <div class="section active" id="sec-orders">
+            <div class="section-title">All Orders</div>
+            <p class="section-sub">Overview of all customer orders.</p>
+
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-label">Total</div>
+                    <div class="stat-number" id="o-total" style="color:white;">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Pending</div>
+                    <div class="stat-number" id="o-pending" style="color:#fbbf24;">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Processing</div>
+                    <div class="stat-number" id="o-processing" style="color:#60a5fa;">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Done</div>
+                    <div class="stat-number" id="o-done" style="color:#34d399;">0</div>
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="allOrdersBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ==================== UPDATE STATUS ==================== -->
+        <div class="section" id="sec-update">
+            <div class="section-title">Update Order Status</div>
+            <p class="section-sub">Change the status of any order.</p>
+
+            <div class="filters">
+                <button class="filter-btn active" onclick="setOrderFilter('all', this)">All</button>
+                <button class="filter-btn" onclick="setOrderFilter('pending', this)">Pending</button>
+                <button class="filter-btn" onclick="setOrderFilter('processing', this)">Processing</button>
+                <button class="filter-btn" onclick="setOrderFilter('ready', this)">Ready</button>
+                <button class="filter-btn" onclick="setOrderFilter('delivered', this)">Delivered</button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="updateOrdersBody"></tbody>
+                </table>
+                <div class="no-data" id="noUpdateOrders" style="display:none;">No orders found.</div>
+            </div>
+        </div>
+
+        <!-- ==================== SEARCH ORDERS ==================== -->
+        <div class="section" id="sec-search">
+            <div class="section-title">Search Orders</div>
+            <p class="section-sub">Find a specific order quickly.</p>
+
+            <div class="toolbar">
+                <input type="text" class="search-input" id="orderSearch" placeholder="Search by Order ID or customer name..." oninput="renderSearch()">
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Items</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchOrdersBody"></tbody>
+                </table>
+                <div class="no-data" id="noSearchOrders">Start typing to search orders.</div>
+            </div>
+        </div>
+
+        <!-- ==================== VIEW STOCK ==================== -->
+        <div class="section" id="sec-stock">
+            <div class="section-title">Product Stock</div>
+            <p class="section-sub">Check current stock levels. Contact admin to make changes.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Stock</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stockViewBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ==================== UPDATE STOCK ==================== -->
+        <div class="section" id="sec-stockupdate">
+            <div class="section-title">Update Stock</div>
+            <p class="section-sub">Add or remove stock units for a product.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Current Stock</th>
+                            <th>Adjust</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stockUpdateBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ==================== DELIVERIES ==================== -->
+        <div class="section" id="sec-deliveries">
+            <div class="section-title">Process Deliveries / Pickups</div>
+            <p class="section-sub">Mark orders as delivered or ready for pickup.</p>
+
+            <div class="filters">
+                <button class="filter-btn active" onclick="setDeliveryFilter('all', this)">All</button>
+                <button class="filter-btn" onclick="setDeliveryFilter('delivery', this)">Delivery</button>
+                <button class="filter-btn" onclick="setDeliveryFilter('pickup', this)">Pickup</button>
+            </div>
+
+            <div class="delivery-grid" id="deliveryGrid"></div>
+            <div class="no-data" id="noDeliveries" style="display:none;">No orders to process.</div>
+        </div>
+
+    </div><!-- end .main -->
+
+    <!-- ==================== UPDATE STATUS MODAL ==================== -->
+    <div class="modalOverlay" id="statusModalOverlay">
+        <div class="modal">
+            <button class="closeBtn" onclick="closeModal('statusModalOverlay')">&times;</button>
+            <h2>Update Status</h2>
+            <p class="sub" id="statusModalSub">Order info here</p>
+
+            <div class="form-group">
+                <label>New Status</label>
+                <select id="newStatus">
+                    <option value="pending">Pending</option>
+                    <option value="processing">Processing</option>
+                    <option value="ready">Ready for Pickup</option>
+                    <option value="delivered">Delivered</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Note (optional)</label>
+                <textarea id="statusNote" placeholder="Add a note..."></textarea>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-dark" onclick="closeModal('statusModalOverlay')">Cancel</button>
+                <button class="btn-white" onclick="saveStatus()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== STOCK ADJUST MODAL ==================== -->
+    <div class="modalOverlay" id="empStockModalOverlay">
+        <div class="modal">
+            <button class="closeBtn" onclick="closeModal('empStockModalOverlay')">&times;</button>
+            <h2>Update Stock</h2>
+            <p class="sub" id="empStockSub">Product name here</p>
+
+            <div class="form-group">
+                <label>Action</label>
+                <select id="stockAction">
+                    <option value="add">Add Stock</option>
+                    <option value="remove">Remove Stock</option>
+                    <option value="set">Set Exact Amount</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Amount</label>
+                <input type="number" id="empStockAmount" placeholder="Enter amount">
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-dark" onclick="closeModal('empStockModalOverlay')">Cancel</button>
+                <button class="btn-white" onclick="saveEmpStock()">Update</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Script/employee.js"></script>
+
+</body>
+</html>
